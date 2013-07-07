@@ -1,0 +1,24 @@
+{
+    "name": "f/kapi",
+    "type": "library",
+    "description": "Simple helper based on Silex.",
+    "keywords": ["http", "silex"],
+    "homepage": "http://github.com/f/kapi",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fatih Kadir Akin",
+            "email": "fka@fatihak.in",
+            "homepage": "http://fatihak.in",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "silex/silex": "1.0.*",
+        "kevinsperrine/idiorm": "v2.1.3",
+        "kevinsperrine/paris": "v2.0.3",
+        "twig/twig": ">=1.8,<2.0-dev"
+    },
+    "minimum-stability": "dev"
+}
