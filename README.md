@@ -12,6 +12,8 @@ KAPI means "door" in Turkish. The main structure looks like Django.
 ## Creating a Project Skeleton
 
     git clone https://github.com/f/kapi myproject
+    cd myproject
+    composer install
 
 It will create an example project using SQLite as DB.
 
@@ -22,7 +24,7 @@ It will create an example project using SQLite as DB.
 
 That's all! :)
 
-# Getting Started
+## Getting Started
 
 You should define your URLs in *urls.php*:
 
