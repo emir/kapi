@@ -9,6 +9,13 @@ KAPI means "door" in Turkish. The main structure looks like Django.
   - views.php
   - templates/
 
+## Screenshots
+
+![Screenshot1](http://i.imgur.com/b4eSEcE.png)
+![Screenshot2](http://i.imgur.com/eT7Koe2.png)
+![Screenshot3](http://i.imgur.com/PN9S0U7.png)
+![Screenshot4](http://i.imgur.com/iJb6tji.png)
+
 ## Creating a Project Skeleton
 
     git clone https://github.com/f/kapi myproject
