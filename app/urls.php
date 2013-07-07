@@ -3,14 +3,13 @@ namespace KAPI;
 
 $urls = [
   # The API Endpoint View
-  ['get', '/api', 'KAPI\Views::doors', "
-
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, vitae, consequatur, earum aspernatur modi neque eveniet at id quaerat maiores itaque ea laboriosam numquam beatae maxime vel voluptas! Magni, cum.
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, vitae, consequatur, earum aspernatur modi neque eveniet at id quaerat maiores itaque ea laboriosam numquam beatae maxime vel voluptas! Magni, cum.
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, vitae, consequatur, earum aspernatur modi neque eveniet at id quaerat maiores itaque ea laboriosam numquam beatae maxime vel voluptas! Magni, cum.
-
-  "],
+  ['get', '/api', 'KAPI\Views::doors', "Lists the API endpoints."],
 
   # You can define your own URL schemes.
-  ['get', '/blabla{a}', 'KAPI\Views::doors']
+  ['get', '/links/{search}',  'KAPI\Views::links', 'Searchs the value in links table.'],
+  ['get', '/links',           'KAPI\Views::links', 'Shows all the links in links table.'],
+
+  ['get', '',                 'KAPI\Views::index']
+
+  # [http method, url pattern, view method, help text (optional)]
 ];
