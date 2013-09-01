@@ -1,5 +1,7 @@
 # KAPI: Doors for PHP - v0.1
 
+[![Clone to Koding](http://fatihak.in/app/klone/button.png)](http://fatihak.in/app/klone/?/f/kapi)
+
 Silex based simple helper to generate RESTful API's and applications, requires PHP 5.4.
 
 KAPI means "door" in Turkish. The main structure looks like Django.
