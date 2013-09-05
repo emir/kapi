@@ -1,6 +1,6 @@
 # KAPI: Doors for PHP - v0.1
 
-[![Clone in Koding](http://kbutton.org/clone.png)](http://kbutton.org/f/kapi)
+[![Clone in Koding](http://kbutton.org/clone.png?v1)](http://kbutton.org/f/kapi)
 
 Silex based simple helper to generate RESTful API's and applications, requires PHP 5.4.
 
