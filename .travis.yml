@@ -1,0 +1,21 @@
+language: php
+dist: trusty
+sudo: false
+
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+
+before_install:
+  - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
+  - composer self-update
+
+install: travis_retry composer update --no-interaction --prefer-dist
+
+script:
+  - vendor/bin/phpunit
+
+cache:
+  directories:
+    - $HOME/.composer/cache

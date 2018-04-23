@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>API Endpoints</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 10px;
+            font-family: serif;
+            margin: 10px;
+        }
+
+        h1 {
+            margin: 10px 0;
+        }
+
+        #urls {
+            font-size: 1.5em;
+            list-style: none;
+        }
+
+        #urls li {
+            padding: 10px;
+            background-color: #f7f7f7;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        #urls li code.method {
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 50px;
+            display: inline-block;
+        }
+
+        #urls li p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>KAPI Endpoints</h1>
+    
+    <ul id="urls">
+        <?php foreach ($urls as $url): ?>
+        <li>
+            <code class="method"><?php echo $url[0]; ?></code>
+            <code class="url"><?php echo $url[1]; ?></code>
+            
+            <?php if ($url[3]): ?>
+                <p><?php echo $url[3]; ?></p>
+            <?php endif; ?>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</body>
+</html>

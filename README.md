@@ -1,93 +1,94 @@
-# KAPI: Doors for PHP - v0.1
+# KAPI: Doors for PHP - v1.0.0
 
-Silex based simple helper to generate RESTful API's and applications, requires PHP 5.4.
+[![Build Status](https://travis-ci.org/emir/kapi.svg?branch=master)](https://travis-ci.org/emir/kapi.svg?branch=master)
 
-KAPI means "door" in Turkish. The main structure looks like Django.
+Slim Framework based simple helper to generate RESTful API's and applications, requires PHP 7.
 
-  - urls.php
-  - models.php
-  - views.php
-  - templates/
+KAPI means "door" in Turkish.
 
-## Screenshots
+## Creating a Project skeleton
 
-![Screenshot1](http://i.imgur.com/b4eSEcE.png)
-![Screenshot2](http://i.imgur.com/eT7Koe2.png)
-![Screenshot3](http://i.imgur.com/PN9S0U7.png)
-![Screenshot4](http://i.imgur.com/iJb6tji.png)
-
-## Creating a Project Skeleton
-
-    git clone https://github.com/f/kapi myproject
+    git clone https://github.com/emir/kapi myproject
     cd myproject
     composer install
 
-It will create an example project using SQLite as DB.
+It will create an example project.
+
+## Edit Configuration
+
+    $EDITOR .env
+
+## Migrations
+
+    phinx migrate
 
 ## Running the Project
 
     cd myproject
-    php -S localhost:8080
+    php -S localhost:8080 -t public
 
 That's all! :)
 
 ## Getting Started
 
-You should define your URLs in *urls.php*:
+You should define your URLs in *routes.php*:
 
 ```php
-# app/urls.php
+# src/routes.php
 <?php
-namespace KAPI;
 
 $urls = [
-  ['get', '/helloworld', 'KAPI\Views::helloworld']
+  ['get', '/books', 'BooksController::index', 'List all books.']
 ];
 ```
 
-Define your models:
+Create your models:
 
 ```php
-# models.php
+# src/Models/Book.php
 <?php
-namespace KAPI;
 
-use \Model;
+namespace App\Models;
 
-class Link extends Model {
-  public static $_table = 'links';
+use Illuminate\Database\Eloquent\Model;
 
-  public $id;
-  public $link;
-  public $name;
+class Book extends Model
+{
+    /**
+     * @var array
+     */
+    protected $guarded = [];
 }
 ```
 
-And define your views on *views.php*:
+Create your Controllers and methods:
 
 ```php
-# app/views.php
+# src/Controllers/BooksController.php
 <?php
-namespace KAPI;
 
-use \Model;
+namespace App\Controllers;
 
-class Views extends Core\Views {
+use App\Models\Book;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
-  public static function links($search = "") {
-    $links = Model::factory('KAPI\Link')
-      ->whereLike("name", "%$search%")
-      ->findMany();
-
-    return self::jsonMany($links);
-  }
+class BooksController extends AbstractController
+{
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @return Response
+     */
+    public function index(Request $request, Response $response): Response
+    {
+        $books = Book::all();
+        
+        return $response->withJson($books);
+    }
+}
 ```
 
 Done!
-
-----
-#### LICENSE
-
-![CC SA](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
-
-This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.

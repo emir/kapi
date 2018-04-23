@@ -1,3 +1,5 @@
-vendor
-composer.lock
-.DS_Store
+/vendor/
+/logs/*
+!/logs/README.md
+.idea
+.env
