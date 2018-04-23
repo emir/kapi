@@ -1,6 +1,6 @@
 # KAPI: Doors for PHP - v1.0.0
 
-[![Build Status](https://travis-ci.org/emir/kapi.svg?branch=master)](https://travis-ci.org/emir/kapi.svg?branch=master)
+[![Build Status](https://travis-ci.org/emir/kapi.svg?branch=master)](https://travis-ci.org/emir/kapi)
 
 Slim Framework based simple helper to generate RESTful API's and applications, requires PHP 7.
 
