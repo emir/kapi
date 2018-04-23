@@ -22,7 +22,7 @@
         "slim/slim": "^3.1",
         "slim/php-view": "^2.0",
         "monolog/monolog": "^1.17",
-        "illuminate/database": "^5.6",
+        "illuminate/database": "^5.5",
         "vlucas/phpdotenv": "^2.4",
         "robmorgan/phinx": "^0.9.2"
     },
